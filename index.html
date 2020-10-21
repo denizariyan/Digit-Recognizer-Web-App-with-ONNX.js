@@ -1,0 +1,154 @@
+<html>
+  <head>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <nav>
+      <div class="nav-wrapper">
+        <a href="#" class="brand-logo center">Digit Recognizer Demo</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a href="https://github.com/denizariyan">Source Code</a></li>
+          <li><a href ="mailto:contact@denizariyan.com">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+              
+  <div class="container">
+    <div class="row">
+      <div class="col s12 ">
+        <div class="card-panel hoverable">
+          <blockquote><p style="font-size:larger"><strong>This demo is a digit recognizer made with the ONNX.js framework from Microsoft. Similar to tensorflow.js, 
+            ONNX.js is another framework to provide the capability of running machine learning models with JavaScript.
+          </strong></p></blockquote>
+          <p style="text-indent: 30px;">The advantage of using ONNX.js for this project is that no data is being sent to anywhere, everything happens on the user's computer using WebAssembly and 
+            WebGL to run on CPU or GPU respectively. Also, since everything is running on the user's local computer there is no need for powerful servers or concerns about 
+            privacy.
+          </p>
+          <p style="text-indent: 30px;">One of the disadvantages of making evaluations on the client-side is that the project depends on the user's computer being 
+            powerful enough to handle the model at a fast pace. This is not a problem in this case as the used MNIST model is relatively small and optimized making it easy 
+            on the client-side computer.
+          </p>
+          <p style="text-indent: 30px;">The model that is being used to make predictions is not perfect by any means. It is trained to be fast and easy to run, 
+            compromising the accuracy. This is merely a demo to show the capabilities of the ONNX.js and how easy it makes running machine learning models on the web. 
+            Run on a powerful computer with a large monitor for best experience. </p>
+        </div>
+      </div>
+      <div class="col s3 offset-s4">
+        <div class="card-panel no-pad hoverable">
+          <canvas
+            class="canvas elevation"
+            id="canvas"
+            width="280"
+            height="280"
+          ></canvas>
+      </div>
+      </div>
+      <div class="card-panel hoverable col s2">
+        <div id="pred" class="predictions">
+          <div class="prediction-col" id="prediction-0">
+            <div class="prediction-bar-container">
+              <div class="prediction-bar"></div>
+            </div>
+            <div class="prediction-number rotated">0</div>
+          </div>
+  
+          <div class="prediction-col" id="prediction-1">
+            <div class="prediction-bar-container">
+              <div class="prediction-bar"></div>
+            </div>
+            <div class="prediction-number rotated">1</div>
+          </div>
+  
+          <div class="prediction-col" id="prediction-2">
+            <div class="prediction-bar-container">
+              <div class="prediction-bar"></div>
+            </div>
+            <div class="prediction-number rotated">2</div>
+          </div>
+  
+          <div class="prediction-col" id="prediction-3">
+            <div class="prediction-bar-container">
+              <div class="prediction-bar"></div>
+            </div>
+            <div class="prediction-number rotated">3</div>
+          </div>
+  
+          <div class="prediction-col" id="prediction-4">
+            <div class="prediction-bar-container">
+              <div class="prediction-bar"></div>
+            </div>
+            <div class="prediction-number rotated">4</div>
+          </div>
+  
+          <div class="prediction-col" id="prediction-5">
+            <div class="prediction-bar-container">
+              <div class="prediction-bar"></div>
+            </div>
+            <div class="prediction-number rotated">5</div>
+          </div>
+  
+          <div class="prediction-col" id="prediction-6">
+            <div class="prediction-bar-container">
+              <div class="prediction-bar"></div>
+            </div>
+            <div class="prediction-number rotated">6</div>
+          </div>
+  
+          <div class="prediction-col" id="prediction-7">
+            <div class="prediction-bar-container">
+              <div class="prediction-bar"></div>
+            </div>
+            <div class="prediction-number rotated">7</div>
+          </div>
+  
+          <div class="prediction-col" id="prediction-8">
+            <div class="prediction-bar-container">
+              <div class="prediction-bar"></div>
+            </div>
+            <div class="prediction-number rotated">8</div>
+          </div>
+  
+          <div class="prediction-col" id="prediction-9">
+            <div class="prediction-bar-container">
+              <div class="prediction-bar"></div>
+            </div>
+            <div class="prediction-number rotated">9</div>
+          </div>
+        </div>
+        <div class="button-pad center">
+        <a id="clear-button" class="waves-effect waves-light btn">CLEAR</a>
+      </div>
+      </div>
+    </div>
+  </div>
+  
+  <footer class="page-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Digit Recognizer Demo</h5>
+          <p class="grey-text text-lighten-4">ONNX.js demo using  MNIST model trained using PyTorch to make predictions on the web!</p>
+        </div>
+        <div class="col l4 offset-l2 s12">
+          <h5 class="white-text">Links</h5>
+          <ul>
+            <li><a class="grey-text text-lighten-3" href="#!">Source Code</a></li>
+            <li><a class="grey-text text-lighten-3" href="mailto:contact@denizariyan.com">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      © 2020 Deniz Arıyan
+      </div>
+    </div>
+  </footer>
+      
+    <script src="https://cdn.jsdelivr.net/npm/onnxjs/dist/onnx.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
